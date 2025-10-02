@@ -2,6 +2,7 @@ import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Hero from "@/components/ui/sections/Hero";
 import Skills from "@/components/ui/sections/Skills";
 import Projects from "@/components/ui/sections/Projects";
+import Footer from "@/components/ui/Footer";
 
 const navItems = [
   {
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <Projects />
+      <Footer />
     </main>
   );
 }
