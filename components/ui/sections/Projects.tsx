@@ -21,7 +21,7 @@ const projects = [
       "/projects/AddPoster/demo_4.png",
       "/projects/AddPoster/demo_6.png",
     ],
-    link: "https://github.com/dariusp0p/addposter",
+    link: "/addposter",
   },
   {
     title: "Python Application - HotelSimulator",
@@ -34,7 +34,7 @@ const projects = [
       "/projects/HotelSimulator/demo_3.png",
       "/projects/HotelSimulator/demo_4.png",
     ],
-    link: "https://github.com/dariusp0p/hotelsimulator",
+    link: "/hotelsimulator",
   },
   {
     title: "Full-stack Website Application - Mindify",
@@ -54,7 +54,7 @@ const projects = [
       "/projects/Mindify/demo_4.png",
       "/projects/Mindify/demo_5.png",
     ],
-    link: "https://github.com/dariusp0p/mindify",
+    link: "/mindify",
   },
   {
     title: "Full-stack Website - Forever Living Products Team",
@@ -76,7 +76,7 @@ const projects = [
       "/projects/ForeverWebsite/demo_3.png",
       "/projects/ForeverWebsite/demo_4.png",
     ],
-    link: "https://github.com/dariusp0p/flp-website",
+    link: "https://www.superpowersteam.ro",
   },
   {
     title: "Personal Portfolio Website",
