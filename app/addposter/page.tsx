@@ -1,12 +1,8 @@
 import { FloatingNav } from "@/components/ui/sections/FloatingNavbar";
-import Hero from "@/components/ui/sections/Hero";
-import Skills from "@/components/ui/sections/Skills";
-import Projects from "@/components/ui/sections/Projects";
 import Footer from "@/components/ui/sections/Footer";
 
 const navItems = [
-  { name: "Home", link: "#hero" },
-  { name: "Skills", link: "#skills" },
+  { name: "Home", link: "/" },
   {
     name: "Projects",
     link: "#projects",
@@ -18,13 +14,14 @@ const navItems = [
   },
 ];
 
-export default function Home() {
+export default function AddPosterPage() {
   return (
-    <main>
+    <main className="min-h-screen">
       <FloatingNav navItems={navItems} />
-      <Hero />
-      <Skills />
-      <Projects />
+      <section className="min-h-[90vh] p-16">
+        <h1 className="text-4xl font-bold mb-4">AddPoster</h1>
+        <p>Details and demo for the AddPoster desktop application.</p>
+      </section>
       <Footer />
     </main>
   );

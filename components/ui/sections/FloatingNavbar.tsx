@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../ThemeToggle";
+import Link from "next/link";
 
 export const FloatingNav = ({
   navItems,
@@ -12,6 +13,7 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: React.ReactNode;
+    children?: { name: string; link: string }[];
   }[];
   className?: string;
 }) => {
@@ -61,6 +63,7 @@ export const FloatingNav = ({
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <AnimatePresence mode="wait">
@@ -76,18 +79,46 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem, idx) => (
-          <a
-            key={`link-${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            {navItem.icon && <span className="mr-1">{navItem.icon}</span>}
-            <span className="text-sm">{navItem.name}</span>
-          </a>
-        ))}
+        {navItems.map((navItem, idx) =>
+          navItem.children ? (
+            <div key={`dropdown-${idx}`} className="relative">
+              <button
+                className={cn(
+                  "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+                )}
+                onClick={() => setDropdownOpen((open) => !open)}
+                tabIndex={0}
+              >
+                {navItem.icon && <span className="mr-1">{navItem.icon}</span>}
+                <span className="text-sm">{navItem.name}</span>
+              </button>
+              {dropdownOpen && (
+                <div className="absolute left-0 mt-2 min-w-[140px] bg-white dark:bg-black rounded-lg shadow-lg py-2">
+                  {navItem.children.map((child, cidx) => (
+                    <Link
+                      key={`sublink-${cidx}`}
+                      href={child.link}
+                      className="block px-4 py-2 text-neutral-600 dark:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm"
+                    >
+                      {child.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              key={`link-${idx}`}
+              href={navItem.link}
+              className={cn(
+                "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              )}
+            >
+              {navItem.icon && <span className="mr-1">{navItem.icon}</span>}
+              <span className="text-sm">{navItem.name}</span>
+            </Link>
+          )
+        )}
         <ThemeToggle />
       </motion.div>
     </AnimatePresence>

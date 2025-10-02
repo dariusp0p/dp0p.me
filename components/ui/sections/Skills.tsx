@@ -38,7 +38,10 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="flex flex-col items-center justify-center bg-background p-4 lg:p-64 lg:pt-10 lg:pb-16">
+    <section
+      id="skills"
+      className="flex flex-col items-center justify-center bg-background p-4 lg:p-64 lg:pt-10 lg:pb-16"
+    >
       <h2 className="text-5xl font-bold mb-10 text-left w-full max-w-4xl mx-auto">
         Skills
       </h2>
