@@ -1,9 +1,50 @@
 import React from "react";
+import SkillCard from "../SkillCard";
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDatabase,
+  FaPhp,
+  FaBootstrap,
+} from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiTailwindcss,
+  SiQt,
+  SiSelenium,
+  SiMysql,
+  SiSqlite,
+} from "react-icons/si";
+
+const skills = [
+  { icon: <FaPython />, name: "Python" },
+  { icon: <FaNodeJs />, name: "JavaScript" },
+  { icon: <FaNodeJs />, name: "TypeScript" },
+  { icon: <SiCplusplus />, name: "C++" },
+  { icon: <FaPhp />, name: "PHP" },
+  { icon: <FaReact />, name: "React" },
+  { icon: <FaNodeJs />, name: "Node.js" },
+  { icon: <FaPython />, name: "Django" },
+  { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+  { icon: <FaBootstrap />, name: "Bootstrap" },
+  { icon: <SiQt />, name: "Qt" },
+  { icon: <SiQt />, name: "PyQt" },
+  { icon: <SiSelenium />, name: "Selenium" },
+  { icon: <SiMysql />, name: "MySQL" },
+  { icon: <SiSqlite />, name: "SQLite" },
+  { icon: <FaDatabase />, name: "SQL Server" },
+];
 
 const Skills = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-red-500">
-      <h2 className="text-4xl font-bold">Skills Section</h2>
+    <section className="flex flex-col items-center justify-center bg-background p-4 lg:p-64 lg:pt-10 lg:pb-16">
+      <h2 className="text-5xl font-bold mb-4 lg:mb-10 text-left">Skills</h2>
+      <div className="flex flex-wrap gap-6 justify-center">
+        {skills.map((skill, idx) => (
+          <SkillCard key={idx} icon={skill.icon} name={skill.name} />
+        ))}
+      </div>
     </section>
   );
 };
