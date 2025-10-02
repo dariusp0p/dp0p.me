@@ -62,7 +62,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.32 0 0);  /* Changed from oklch(0.145 0 0) to match neutral-600 gray */
+  --foreground: oklch(0.32 0 0);  
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

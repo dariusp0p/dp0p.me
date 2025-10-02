@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const FloatingNav = ({
   navItems,
